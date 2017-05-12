@@ -97,19 +97,18 @@ public class Polinomio {
 	}
 
 	double evaluarProgDinamica(double x) {
+		
+	}
+
+	double evaluarMejorada(double x) {
 		double multi = 1;
 		double resultado = coeficientes[grado]; //guardo el termino independiente 
 		
-		for(int i = grado-1; i >= 0; i--)
-		{
+		for(int i = grado-1; i >= 0; i--){
 			multi *= x;
 			resultado += coeficientes[i] * multi; // se multiplica cada termino con el grado
 		}
 		return resultado;
-	}
-
-	double evaluarMejorada(double x) {
-
 	}
 
 	double evaluarPow(double x) {
@@ -120,6 +119,10 @@ public class Polinomio {
 	}
 
 	double evaluarHorner(double x) {
-
+		double resultado = this.coeficientes[0];
+		for(int i = 1; i <= this.grado; i++){
+			resultado = this.coeficientes[i] + resultado * x;
+		}
+		return resultado;
 	}
 }
