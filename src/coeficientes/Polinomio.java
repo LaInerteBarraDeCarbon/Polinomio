@@ -202,7 +202,7 @@ public class Polinomio {
 	public double evaluarPow(double x) {
 		double resultado = 0;
 		for (int i = 0; i <= this.grado; i++)
-			resultado += this.coeficientes[i] * Math.pow(x, this.grado - 1);
+			resultado += this.coeficientes[i] * Math.pow(x, this.grado - i);
 		return resultado;
 	}
 

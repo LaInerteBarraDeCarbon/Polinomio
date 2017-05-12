@@ -79,7 +79,7 @@ public class TestPolinomio {
 				+ resultado + "\nTiempo: " + diff);
 	}
 
-	@Test
+	@Ignore
 	public void testPow() {
 		Calendar tIni = new GregorianCalendar();
 		double resultado = this.polinomio.evaluarPow(this.x);
