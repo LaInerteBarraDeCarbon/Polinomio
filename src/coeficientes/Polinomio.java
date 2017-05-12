@@ -39,6 +39,7 @@ public class Polinomio {
 		for(int i = 0; i <= this.grado; i++){
 			resultado += this.coeficientes[i] * potencia(x, this.grado-i);
 		}
+		return resultado;
 	}
 	
 	double potencia(double x, int n){
