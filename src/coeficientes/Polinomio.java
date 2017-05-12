@@ -36,7 +36,21 @@ public class Polinomio {
 	}
 
 	double evaluarRecursiva(double x) {
-
+		double resultado = 0;
+		for(int i = 0; i <= this.grado; i++){
+			resultado += this.coeficientes[i] * potencia(x, this.grado-i);
+		}
+		return resultado;
+	}
+	
+	double potencia(double x, int n){
+		if(n > 1)
+			return x * potencia(x, n-1);
+		else
+			if(n == 1)
+				return x;
+			else
+				return 1;
 	}
 
 	double evaluarRecursivaPar(double x) {
