@@ -24,7 +24,7 @@ public class TestPolinomio {
 		this.polinomio = new Polinomio(vector);
 	}
 
-	@Ignore
+	@Test
 	public void testMultiplicacionSucesiva() {
 		Calendar tIni = new GregorianCalendar();
 		double resultado = this.polinomio.evaluarMSucesivas(x);
@@ -35,7 +35,7 @@ public class TestPolinomio {
 				+ " da como resultado: " + resultado + "\nTiempo: " + diff);
 	}
 
-	@Ignore
+	@Test
 	public void testRecursiva() {
 		Calendar tIni = new GregorianCalendar();
 		double resultado = this.polinomio.evaluarRecursiva(this.x);
@@ -46,7 +46,7 @@ public class TestPolinomio {
 				+ resultado + "\nTiempo: " + diff);
 	}
 
-	@Ignore
+	@Test
 	public void testRecursivaPar() {
 		Calendar tIni = new GregorianCalendar();
 		double resultado = this.polinomio.evaluarRecursivaPar(this.x);
@@ -68,7 +68,7 @@ public class TestPolinomio {
 				+ resultado + "\nTiempo: " + diff);
 	}
 
-	@Ignore
+	@Test
 	public void testMejorada() {
 		Calendar tIni = new GregorianCalendar();
 		double resultado = this.polinomio.evaluarMejorada(this.x);
@@ -79,7 +79,7 @@ public class TestPolinomio {
 				+ resultado + "\nTiempo: " + diff);
 	}
 
-	@Ignore
+	@Test
 	public void testPow() {
 		Calendar tIni = new GregorianCalendar();
 		double resultado = this.polinomio.evaluarPow(this.x);
@@ -90,7 +90,7 @@ public class TestPolinomio {
 				+ "\nTiempo: " + diff);
 	}
 
-	@Ignore
+	@Test
 	public void testHorner() {
 		Calendar tIni = new GregorianCalendar();
 		double resultado = this.polinomio.evaluarHorner(this.x);

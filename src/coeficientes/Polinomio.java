@@ -160,13 +160,12 @@ public class Polinomio {
 	 * @return Resultado. <br>
 	 */
 	public double evaluarProgDinamica(double x) {
-		double resultado[] = new double[this.grado + 1];
-		resultado[this.grado] = 1;
-		double resul = 0;
-		resul = this.coeficientes[this.grado];
-		for (int i = this.grado - 1; i > 0; i--) {
-			resultado[i] = resultado[i + 1] * x;
-			resul += this.coeficientes[i] * resultado[i];
+		double resultados[] = new double[this.grado + 1];
+		resultados[this.grado] = 1;
+		double resul = this.coeficientes[this.grado];
+		for (int i = this.grado - 1; i >= 0; i--) {
+			resultados[i] = resultados[i + 1] * x;
+			resul += this.coeficientes[i] * resultados[i];
 		}
 		return resul;
 	}
