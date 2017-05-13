@@ -1,4 +1,4 @@
-package coeficientes;
+package polinomio;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -223,7 +223,7 @@ public class Polinomio {
 
 	@Override
 	public String toString() {
-		return "EL polinomio es de grado " + grado + " con coeficientes = " + Arrays.toString(coeficientes);
+		return "EL polinomio es de grado " + grado + " con polinomio = " + Arrays.toString(coeficientes);
 	}
 
 }
