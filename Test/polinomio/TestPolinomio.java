@@ -2,9 +2,6 @@ package polinomio;
 
 import static org.junit.Assert.*;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -25,78 +22,71 @@ public class TestPolinomio {
 
 	@Test
 	public void testMultiplicacionSucesiva() {
-		Calendar tIni = new GregorianCalendar();
+		long tIni = System.nanoTime();
 		double resultado = this.polinomio.evaluarMSucesivas(x);
-		Calendar tFin = new GregorianCalendar();
-		long diff = tFin.getTimeInMillis() - tIni.getTimeInMillis();
+		long tFin = System.nanoTime();
+		long diff = tFin - tIni;
 		assertEquals(this.esperado, resultado, 0.0);
-		System.out.println("--MultiplicaciÛn Sucesiva: \n" + this.polinomio + "\nEl valor " + this.x
-				+ " da como resultado: " + resultado + "\nTiempo: " + diff);
+		System.out.println("Multiplicaci√≥n sucesivas: " + diff);
 	}
 
 	@Test
 	public void testRecursiva() {
-		Calendar tIni = new GregorianCalendar();
-		double resultado = this.polinomio.evaluarRecursiva(this.x);
-		Calendar tFin = new GregorianCalendar();
-		long diff = tFin.getTimeInMillis() - tIni.getTimeInMillis();
+		long tIni = System.nanoTime();
+		double resultado = this.polinomio.evaluarRecursiva(x);
+		long tFin = System.nanoTime();
+		long diff = tFin - tIni;
 		assertEquals(this.esperado, resultado, 0.0);
-		System.out.println("--Recursiva: \n" + this.polinomio + "\nEl valor " + this.x + " da como resultado: "
-				+ resultado + "\nTiempo: " + diff);
+		System.out.println("Recursiva: " + diff);
 	}
 
 	@Test
 	public void testRecursivaPar() {
-		Calendar tIni = new GregorianCalendar();
-		double resultado = this.polinomio.evaluarRecursivaPar(this.x);
-		Calendar tFin = new GregorianCalendar();
-		long diff = tFin.getTimeInMillis() - tIni.getTimeInMillis();
+		long tIni = System.nanoTime();
+		double resultado = this.polinomio.evaluarRecursivaPar(x);
+		long tFin = System.nanoTime();
+		long diff = tFin - tIni;
 		assertEquals(this.esperado, resultado, 0.0);
-		System.out.println("--Recursiva Par: \n" + this.polinomio + "\nEl valor " + this.x + " da como resultado: "
-				+ resultado + "\nTiempo: " + diff);
+		System.out.println("Recursiva Par: " + diff);
 	}
 
 	@Test
 	public void testDinamica() {
-		Calendar tIni = new GregorianCalendar();
-		double resultado = this.polinomio.evaluarProgDinamica(this.x);
-		Calendar tFin = new GregorianCalendar();
-		long diff = tFin.getTimeInMillis() - tIni.getTimeInMillis();
+		long tIni = System.nanoTime();
+		double resultado = this.polinomio.evaluarProgDinamica(x);
+		long tFin = System.nanoTime();
+		long diff = tFin - tIni;
 		assertEquals(this.esperado, resultado, 0.0);
-		System.out.println("--Prog Din·mica: \n" + this.polinomio + "\nEl valor " + this.x + " da como resultado: "
-				+ resultado + "\nTiempo: " + diff);
+		System.out.println("Din√°mica: " + diff);
 	}
 
 	@Test
 	public void testMejorada() {
-		Calendar tIni = new GregorianCalendar();
-		double resultado = this.polinomio.evaluarMejorada(this.x);
-		Calendar tFin = new GregorianCalendar();
-		long diff = tFin.getTimeInMillis() - tIni.getTimeInMillis();
+		long tIni = System.nanoTime();
+		double resultado = this.polinomio.evaluarMejorada(x);
+		long tFin = System.nanoTime();
+		long diff = tFin - tIni;
 		assertEquals(this.esperado, resultado, 0.0);
-		System.out.println("--Mejorada: \n" + this.polinomio + "\nEl valor " + this.x + " da como resultado: "
-				+ resultado + "\nTiempo: " + diff);
+		System.out.println("Mejorada: " + diff);
 	}
 
 	@Test
 	public void testPow() {
-		Calendar tIni = new GregorianCalendar();
-		double resultado = this.polinomio.evaluarPow(this.x);
-		Calendar tFin = new GregorianCalendar();
-		long diff = tFin.getTimeInMillis() - tIni.getTimeInMillis();
+		long tIni = System.nanoTime();
+		double resultado = this.polinomio.evaluarPow(x);
+		long tFin = System.nanoTime();
+		long diff = tFin - tIni;
 		assertEquals(this.esperado, resultado, 0.0);
-		System.out.println("--Pow: \n" + this.polinomio + "\nEl valor " + this.x + " da como resultado: " + resultado
-				+ "\nTiempo: " + diff);
+		System.out.println("Pow: " + diff);
 	}
 
 	@Test
 	public void testHorner() {
-		Calendar tIni = new GregorianCalendar();
-		double resultado = this.polinomio.evaluarHorner(this.x);
-		Calendar tFin = new GregorianCalendar();
-		long diff = tFin.getTimeInMillis() - tIni.getTimeInMillis();
+		long tIni = System.nanoTime();
+		double resultado = this.polinomio.evaluarHorner(x);
+		long tFin = System.nanoTime();
+		long diff = tFin - tIni;
 		assertEquals(this.esperado, resultado, 0.0);
-		System.out.println("--Horner: \n" + this.polinomio + "\nEl valor " + this.x + " da como resultado: " + resultado
-				+ "\nTiempo: " + diff);
+		System.out.println("Horner: " + diff);
 	}
 }

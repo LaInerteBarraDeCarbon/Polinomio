@@ -1,5 +1,11 @@
 package polinomio;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class BinomioDeNewton {
 
 	private int valorA;
@@ -20,6 +26,28 @@ public class BinomioDeNewton {
 		this.valorA = valorA;
 		this.valorB = valorB;
 		this.valorN = valorN;
+	}
+
+	public BinomioDeNewton(final String path) throws IOException {
+		FileReader fr;
+		BufferedReader bfInput = null;
+		try {
+			String linea;
+			fr = new FileReader(new File(path));
+			bfInput = new BufferedReader(fr);
+			linea = bfInput.readLine();
+			if (linea != null) {
+				this.valorA = Integer.parseInt(linea);
+				linea = bfInput.readLine();
+				this.valorB = Integer.parseInt(linea);
+				linea = bfInput.readLine();
+				this.valorN = Integer.parseInt(linea);
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			bfInput.close();
+		}
 	}
 
 	/**

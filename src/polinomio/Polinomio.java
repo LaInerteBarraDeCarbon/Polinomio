@@ -1,9 +1,11 @@
 package polinomio;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Polinomio {
 	private int grado;
@@ -21,19 +23,32 @@ public class Polinomio {
 	/**
 	 * Construye un polinomio desde un archivo. <br>
 	 * 
-	 * @param arg
-	 *            Dirección del archivo. <br>
-	 * @throws FileNotFoundException
+	 * @param path
+	 *            Direcciï¿½n del archivo. <br>
+	 * @throws IOException
 	 */
-	public Polinomio(String arg) throws FileNotFoundException {
-		Scanner sc = new Scanner(new File(arg));
-		this.grado = sc.nextInt();
-		this.coeficientes = new double[grado + 1]; // por el termino
-													// independiente
-		for (int i = 0; i <= grado; i++) {
-			this.coeficientes[i] = sc.nextDouble();
+	public Polinomio(String path) throws IOException {
+		FileReader fr;
+		BufferedReader bfInput = null;
+		try {
+			String linea;
+			fr = new FileReader(new File(path));
+			bfInput = new BufferedReader(fr);
+			linea = bfInput.readLine();
+			if (linea != null) {
+				this.grado = Integer.parseInt(linea);
+				this.coeficientes = new double[this.grado + 1];
+				linea = bfInput.readLine();
+				for (int i = 0; i < this.grado + 1; i++) {
+					this.coeficientes[i] = Double.parseDouble(linea);
+					linea = bfInput.readLine();
+				}
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			bfInput.close();
 		}
-		sc.close();
 	}
 
 	/**
@@ -44,7 +59,7 @@ public class Polinomio {
 	 *            Coeficientes del polinomio. <br>
 	 */
 	public Polinomio(double[] vector) {
-		// Si el vector no tiene elementos el usar este constructor equivaldrá a
+		// Si el vector no tiene elementos el usar este constructor equivaldrï¿½ a
 		// utilizar el constructor por defecto.
 		if (vector.length == 0) {
 			coeficientes = new double[1];
@@ -172,7 +187,7 @@ public class Polinomio {
 
 	/**
 	 * Resuelve un polinomio alamcenando las potencias de X ya calculadas de
-	 * manera más eficiente. <br>
+	 * manera mï¿½s eficiente. <br>
 	 * 
 	 * @param x
 	 *            Valor de X. <br>
@@ -206,8 +221,8 @@ public class Polinomio {
 	}
 
 	/**
-	 * Resuelve un polinomio aplicando el algoritmo de Horner de análiis
-	 * numérico. <br>
+	 * Resuelve un polinomio aplicando el algoritmo de Horner de anï¿½liis
+	 * numï¿½rico. <br>
 	 * 
 	 * @param x
 	 *            Valor de X. <br>
