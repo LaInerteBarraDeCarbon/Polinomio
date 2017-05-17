@@ -59,8 +59,6 @@ public class Polinomio {
 	 *            Coeficientes del polinomio. <br>
 	 */
 	public Polinomio(double[] vector) {
-		// Si el vector no tiene elementos el usar este constructor equivaldr� a
-		// utilizar el constructor por defecto.
 		if (vector.length == 0) {
 			coeficientes = new double[1];
 			coeficientes[0] = 0;
@@ -238,7 +236,7 @@ public class Polinomio {
 
 	@Override
 	public String toString() {
-		return "EL polinomio es de grado " + grado + " con polinomio = " + Arrays.toString(coeficientes);
+		return "El polinomio es de grado " + grado + " con polinomio = " + Arrays.toString(coeficientes);
 	}
 
 }
